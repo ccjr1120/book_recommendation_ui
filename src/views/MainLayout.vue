@@ -49,7 +49,7 @@ export default {};
   line-height: 40px;
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  min-height: 1024px;
+  min-height: 960px;
 }
 .popover-width {
   widows: 100px;
