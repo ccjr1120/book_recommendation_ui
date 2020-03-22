@@ -3,7 +3,13 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+const MainLayout = ()=>import('../views/MainLayout')
+
 const routes = [
+  {
+    path:'/',
+    component:MainLayout
+  },
 ]
 
 const router = new VueRouter({

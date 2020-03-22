@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" class="fillcontain">
     <router-view/>
   </div>
 </template>
 
-<style>
+<style lang="less">
+@import "./assets/style/common";
 </style>
