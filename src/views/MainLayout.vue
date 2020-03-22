@@ -1,8 +1,8 @@
 <template>
   <el-container class="fillcontain">
-    <el-aside>
+    <el-aside width="300px">
       <el-row>
-        <el-col style="width:90%" :span="12">
+        <el-col style="width:100%" :span="12">
           <el-menu default-active="/index" class="el-menu-vertical-demo" router>
             <el-menu-item index="/index">
               <i class="el-icon-menu"></i>
