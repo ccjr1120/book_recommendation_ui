@@ -7,7 +7,7 @@
         title="点击查看详情"
         :alt="book.name"
         rel="v:photo"
-        style="width: 135px;height: 200px;"
+        style="width: 100%;height: 200px;"
         />
       </div>
       <div class="book_describe">
@@ -36,7 +36,7 @@ export default {
 .book_describe{
   float: right;
   width: 50%;
-  line-height: 30px;
+  line-height: 26px;
   font-size: 14px;
 }
 </style>

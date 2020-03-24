@@ -8,12 +8,7 @@
 
       <el-card class="box-card">
         <el-row>
-          <el-col :span="6" v-for="o in 4" :key="o">
-            <BookCard v-bind:book="book"></BookCard>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="6" v-for="o in 4" :key="o">
+          <el-col :span="8" v-for="o in 6" :key="o">
             <BookCard v-bind:book="book"></BookCard>
           </el-col>
         </el-row>
@@ -23,7 +18,6 @@
               v-if="pageNumber == 0"
               type="text"
               disabled
-              plain
               icon="el-icon-arrow-left"
             >上一页</el-button>
             <el-button v-else @click="pageNumber-=1" type="text" plain icon="el-icon-arrow-left">上一页</el-button>
@@ -66,7 +60,7 @@ export default {
 </script>
 <style scoped>
 .box-card {
-  height: 800px;
+  height: 120%;
 }
 .el-col {
   padding-left: 10px;
