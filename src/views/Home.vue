@@ -49,6 +49,7 @@ export default {
         subtitle: "无",
         author: "路易莎·梅·奥尔科特",
         fans: 1723,
+        reFans:19999,
         rank: 9.1
       }
     };

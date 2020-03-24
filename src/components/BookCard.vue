@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="hover">
+  <el-card shadow="hover" :body-style="{ padding: '0px' }">
     <div>
       <div style="float:left;width:46%">
         <img
@@ -7,7 +7,7 @@
         title="点击查看详情"
         :alt="book.name"
         rel="v:photo"
-        style="width: 100%;height: 200px;"
+        style="width: 100%;height: 100%;"
         />
       </div>
       <div class="book_describe">
@@ -15,6 +15,7 @@
         <br />作者: {{book.author}}
         <br />副标题: {{book.subtitle}}
         <br />多少人读过: {{book.fans}}
+        <br/>多少人想读:{{book.reFans}}
         <br />评分: {{book.rank}}
         <br />
         <el-button type="text" plain>想读</el-button>
