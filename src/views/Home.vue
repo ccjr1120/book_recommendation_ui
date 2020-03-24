@@ -60,7 +60,7 @@ export default {
 </script>
 <style scoped>
 .box-card {
-  height: 120%;
+  height: 100%;
 }
 .el-col {
   padding-left: 10px;

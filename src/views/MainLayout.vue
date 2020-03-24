@@ -3,8 +3,8 @@
     <el-aside width="300px">
       <el-row>
         <el-col style="width:100%" :span="12">
-          <el-menu default-active="/index" class="el-menu-vertical-demo" router>
-            <el-menu-item index="/index">
+          <el-menu default-active="/home" class="el-menu-vertical-demo" router>
+            <el-menu-item index="/home">
               <i class="el-icon-menu"></i>
               <span slot="title">首页</span>
             </el-menu-item>
