@@ -6,7 +6,8 @@ Vue.use(VueRouter)
 const MainLayout = () => import('../views/MainLayout')
 const Home = () => import('../views/Home')
 const Recommend = () => import('../views/Recommend')
-
+const ToLook = () => import('../views/ToLook.vue')
+const AlreadyRead = () => import('../views/AlreadyRead')
 const routes = [
   {
     path: '/',
@@ -23,6 +24,14 @@ const routes = [
       {
         path: '/recommend',
         component: Recommend
+      },
+      {
+        path:'/to-look-list',
+        component:ToLook
+      },
+      {
+        path:'/already-read',
+        component:AlreadyRead
       }
     ]
   },
