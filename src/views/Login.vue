@@ -50,7 +50,8 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+          this.$store.commit("updateLoginState")
+          this.$router.push("/home");
         } else {
           console.log("error submit!!");
           return false;

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index'
 
 Vue.use(VueRouter)
 
@@ -12,7 +13,10 @@ const Login = ()=>import('../views/Login')
 const routes = [
   {
     path:'/login',
-    component:Login
+    component:Login,
+    meta:{
+      requiresAuth: false
+    }
   },
   {
     path: '/',
@@ -28,15 +32,24 @@ const routes = [
       },
       {
         path: '/recommend',
-        component: Recommend
+        component: Recommend,
+        meta:{
+          requiresAuth: true
+        }
       },
       {
         path:'/to-look-list',
-        component:ToLook
+        component:ToLook,
+        meta:{
+          requiresAuth: true
+        }
       },
       {
         path:'/already-read',
-        component:AlreadyRead
+        component:AlreadyRead,
+        meta:{
+          requiresAuth: true
+        }
       }
     ]
   },
@@ -46,6 +59,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((route, redirect, next) => {
+  if (route.matched.some(r => r.meta.requiresAuth) && !store.state.isLogin) {
+    next({
+      path: '/login',
+      query: {
+        redirect: route.fullPath
+      }
+    })
+  } else {
+    next()
+  }
 })
 
 export default router
