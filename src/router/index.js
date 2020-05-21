@@ -6,9 +6,14 @@ Vue.use(VueRouter)
 const MainLayout = () => import('../views/MainLayout')
 const Home = () => import('../views/Home')
 const Recommend = () => import('../views/Recommend')
-const ToLook = () => import('../views/ToLook.vue')
+const ToLook = () => import('../views/ToLook')
 const AlreadyRead = () => import('../views/AlreadyRead')
+const Login = ()=>import('../views/Login')
 const routes = [
+  {
+    path:'/login',
+    component:Login
+  },
   {
     path: '/',
     component: MainLayout,
