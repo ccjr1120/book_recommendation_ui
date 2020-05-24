@@ -21,7 +21,12 @@
           :rules="[{ required: true, message: '密码不能为空', trigger: 'blur' },
           { min: 8, max: 16, message: '密码长度不符合要求' }]"
         >
-          <el-input placeholder="Password" v-model="loginForm.password" prefix-icon="el-icon-lock"></el-input>
+          <el-input
+            placeholder="Password"
+            v-model="loginForm.password"
+            prefix-icon="el-icon-lock"
+            show-password
+          ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button @click="submitForm('loginForm')" style="width:100%;" type="primary">Login</el-button>
@@ -32,6 +37,7 @@
 </template>
 
 <script>
+import { login } from "../api/index";
 export default {
   data() {
     return {
@@ -39,10 +45,6 @@ export default {
       loginForm: {
         username: "",
         password: ""
-      },
-      loginRules: {
-        username: [],
-        password: []
       }
     };
   },
@@ -50,8 +52,21 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.$store.commit("updateLoginState")
-          this.$router.push("/home");
+          login(this.loginForm).then(resp => {
+            var data = resp.data;
+            if (data.success) {
+              if (!this.$store.state.isLogin) {
+                this.$store.commit("updateLoginState");
+              }
+              this.$router.push("/home");
+              this.$message({
+                message: "登陆成功",
+                type: "success"
+              });
+            } else {
+              this.$message.error("登录失败，用户或密码错误");
+            }
+          });
         } else {
           console.log("error submit!!");
           return false;
