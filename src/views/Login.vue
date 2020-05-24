@@ -57,7 +57,7 @@ export default {
             if (data.success) {
               if (!this.$store.state.isLogin) {
                 this.$store.commit("updateLoginState");
-              }
+              } 
               this.$router.push("/home");
               this.$message({
                 message: "登陆成功",
