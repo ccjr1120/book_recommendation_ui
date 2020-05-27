@@ -4,7 +4,7 @@ import store from '../store/index'
 
 Vue.use(VueRouter)
 
-const MainLayout = () => import('../views/MainLayout')
+const AppLayout = () => import('../views/AppLayout')
 const Home = () => import('../views/Home')
 const Recommend = () => import('../views/Recommend')
 const ToLook = () => import('../views/ToLook')
@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/',
-    component: MainLayout,
+    component: AppLayout,
     children: [
       {
         path: '/',

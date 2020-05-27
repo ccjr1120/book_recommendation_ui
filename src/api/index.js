@@ -18,7 +18,7 @@ export const logout = ()=>axios.get('/logout');
  * 获取在首页展示的书籍数据
  * @param params 存放页码，页大小和时间、随机、评分的三选一
  */
- export const getHomeBooks = params => axios.get('/book/books', {params: params})
+ export const getHomeBooks = params => axios.get('/books', {params: params})
 
  /**
   * 获取用户收藏的书籍
